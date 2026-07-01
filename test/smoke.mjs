@@ -64,9 +64,9 @@ function mockCtx(settings = {}) {
   };
   return {
     env: {
-      GOOGLE_WORKSPACE_CLIENT_ID:     'client-id-test',
-      GOOGLE_WORKSPACE_CLIENT_SECRET: 'client-secret-test',
-      GOOGLE_WORKSPACE_REFRESH_TOKEN: 'refresh-token-test',
+      GMAIL_CLIENT_ID:     'client-id-test',
+      GMAIL_CLIENT_SECRET: 'client-secret-test',
+      GMAIL_REFRESH_TOKEN: 'refresh-token-test',
     },
     settings,
     fetch: httpStub,
@@ -74,7 +74,7 @@ function mockCtx(settings = {}) {
   };
 }
 
-console.log('career-ops-plugin-google-workspace smoke test\n');
+console.log('career-ops-plugin-gmail smoke test\n');
 
 // 1. Plugin shape
 console.log('1. Plugin shape');

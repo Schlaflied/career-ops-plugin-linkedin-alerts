@@ -1,4 +1,4 @@
-# career-ops-plugin-google-workspace
+# career-ops-plugin-gmail
 
 Reads job alert emails from Gmail (LinkedIn alerts by default), extracts job posting URLs, and surfaces them in the career-ops pipeline.
 
@@ -19,21 +19,21 @@ Run the one-time auth flow using your preferred OAuth tool (any OAuth2 playgroun
 ### 3. Add to `.env`
 
 ```
-GOOGLE_WORKSPACE_CLIENT_ID=your-client-id.apps.googleusercontent.com
-GOOGLE_WORKSPACE_CLIENT_SECRET=your-client-secret
-GOOGLE_WORKSPACE_REFRESH_TOKEN=your-refresh-token
+GMAIL_CLIENT_ID=your-client-id.apps.googleusercontent.com
+GMAIL_CLIENT_SECRET=your-client-secret
+GMAIL_REFRESH_TOKEN=your-refresh-token
 ```
 
 ### 4. Enable
 
 ```bash
-node plugins.mjs enable google-workspace --confirm
+node plugins.mjs enable gmail --confirm
 ```
 
 ## Optional settings (`config/plugins.yml`)
 
 ```yaml
-google-workspace:
+gmail:
   sender: jobalerts-noreply@linkedin.com  # alert sender to scan (default: LinkedIn job alerts)
   days: 7                                 # how many days back to scan (default: 7)
   maxResults: 50                          # max emails per scan (default: 50)

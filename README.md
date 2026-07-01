@@ -1,4 +1,4 @@
-# career-ops-plugin-google-workspace
+# career-ops-plugin-gmail
 
 A [career-ops](https://github.com/santifer/career-ops) community plugin that reads job alert emails from your Gmail (LinkedIn job alerts by default), extracts job posting URLs, and surfaces them in the career-ops pipeline.
 
@@ -14,7 +14,7 @@ A [career-ops](https://github.com/santifer/career-ops) community plugin that rea
 ## Install
 
 ```bash
-node plugins.mjs install https://github.com/Schlaflied/career-ops-plugin-google-workspace
+node plugins.mjs install https://github.com/Schlaflied/career-ops-plugin-gmail
 ```
 
 ## Setup
@@ -37,21 +37,21 @@ Copy the `refresh_token` from the token response.
 ### 3. Add to `.env`
 
 ```
-GOOGLE_WORKSPACE_CLIENT_ID=your-client-id.apps.googleusercontent.com
-GOOGLE_WORKSPACE_CLIENT_SECRET=your-client-secret
-GOOGLE_WORKSPACE_REFRESH_TOKEN=your-refresh-token
+GMAIL_CLIENT_ID=your-client-id.apps.googleusercontent.com
+GMAIL_CLIENT_SECRET=your-client-secret
+GMAIL_REFRESH_TOKEN=your-refresh-token
 ```
 
 ### 4. Enable
 
 ```bash
-node plugins.mjs enable google-workspace --confirm
+node plugins.mjs enable gmail --confirm
 ```
 
 ## Optional config (`config/plugins.yml`)
 
 ```yaml
-google-workspace:
+gmail:
   sender: jobalerts-noreply@linkedin.com  # alert sender to scan
   days: 7                                 # look-back window in days (default: 7)
   maxResults: 50                          # max emails per scan (default: 50)

@@ -1,17 +1,17 @@
 {
-  "id": "google-workspace",
-  "name": "google-workspace",
+  "id": "gmail",
+  "name": "gmail",
   "version": "0.1.0",
   "apiVersion": 1,
   "description": "Gmail ingest: read job alert emails (LinkedIn alerts by default), extract job posting URLs, and surface them in the career-ops pipeline.",
   "hooks": ["ingest"],
   "requiredEnv": [
-    "GOOGLE_WORKSPACE_CLIENT_ID",
-    "GOOGLE_WORKSPACE_CLIENT_SECRET",
-    "GOOGLE_WORKSPACE_REFRESH_TOKEN"
+    "GMAIL_CLIENT_ID",
+    "GMAIL_CLIENT_SECRET",
+    "GMAIL_REFRESH_TOKEN"
   ],
   "allowedHosts": ["oauth2.googleapis.com", "gmail.googleapis.com"],
   "skill": "skill.md",
   "humanInTheLoop": true,
-  "homepage": "https://github.com/Schlaflied/career-ops-plugin-google-workspace"
+  "homepage": "https://github.com/Schlaflied/career-ops-plugin-gmail"
 }

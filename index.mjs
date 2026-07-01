@@ -1,6 +1,6 @@
-// career-ops-plugin-google-workspace
+// career-ops-plugin-gmail
 // Author: Schlaflied · https://github.com/Schlaflied
-// License: MIT · https://github.com/Schlaflied/career-ops-plugin-google-workspace
+// License: MIT · https://github.com/Schlaflied/career-ops-plugin-gmail
 //
 // Reads job alert emails from Gmail (LinkedIn alerts by default), extracts
 // job posting URLs and titles, and returns them as Job[] for the
@@ -16,9 +16,9 @@ async function getAccessToken(ctx) {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams({
-      client_id:     ctx.env.GOOGLE_WORKSPACE_CLIENT_ID,
-      client_secret: ctx.env.GOOGLE_WORKSPACE_CLIENT_SECRET,
-      refresh_token: ctx.env.GOOGLE_WORKSPACE_REFRESH_TOKEN,
+      client_id:     ctx.env.GMAIL_CLIENT_ID,
+      client_secret: ctx.env.GMAIL_CLIENT_SECRET,
+      refresh_token: ctx.env.GMAIL_REFRESH_TOKEN,
       grant_type:    'refresh_token',
     }).toString(),
   });
