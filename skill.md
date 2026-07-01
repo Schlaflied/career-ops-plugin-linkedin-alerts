@@ -1,4 +1,4 @@
-# career-ops-plugin-gmail
+# career-ops-plugin-linkedin-alerts
 
 Reads job alert emails from Gmail (LinkedIn alerts by default), extracts job posting URLs, and surfaces them in the career-ops pipeline.
 
@@ -27,13 +27,13 @@ GMAIL_REFRESH_TOKEN=your-refresh-token
 ### 4. Enable
 
 ```bash
-node plugins.mjs enable gmail --confirm
+node plugins.mjs enable linkedin-alerts --confirm
 ```
 
 ## Optional settings (`config/plugins.yml`)
 
 ```yaml
-gmail:
+linkedin-alerts:
   sender: jobalerts-noreply@linkedin.com  # alert sender to scan (default: LinkedIn job alerts)
   days: 7                                 # how many days back to scan (default: 7)
   maxResults: 50                          # max emails per scan (default: 50)

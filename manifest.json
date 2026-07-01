@@ -1,9 +1,9 @@
 {
-  "id": "gmail",
-  "name": "gmail",
+  "id": "linkedin-alerts",
+  "name": "linkedin-alerts",
   "version": "0.1.0",
   "apiVersion": 1,
-  "description": "Gmail ingest: read job alert emails (LinkedIn alerts by default), extract job posting URLs, and surface them in the career-ops pipeline.",
+  "description": "LinkedIn job alert ingest: parse LinkedIn alert emails from your Gmail inbox, normalize tracking links to canonical job URLs, and surface them in the career-ops pipeline.",
   "hooks": ["ingest"],
   "requiredEnv": [
     "GMAIL_CLIENT_ID",
@@ -13,5 +13,5 @@
   "allowedHosts": ["oauth2.googleapis.com", "gmail.googleapis.com"],
   "skill": "skill.md",
   "humanInTheLoop": true,
-  "homepage": "https://github.com/Schlaflied/career-ops-plugin-gmail"
+  "homepage": "https://github.com/Schlaflied/career-ops-plugin-linkedin-alerts"
 }

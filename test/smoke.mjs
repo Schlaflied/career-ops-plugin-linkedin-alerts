@@ -74,7 +74,7 @@ function mockCtx(settings = {}) {
   };
 }
 
-console.log('career-ops-plugin-gmail smoke test\n');
+console.log('career-ops-plugin-linkedin-alerts smoke test\n');
 
 // 1. Plugin shape
 console.log('1. Plugin shape');

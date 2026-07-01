@@ -1,4 +1,4 @@
-# career-ops-plugin-gmail
+# career-ops-plugin-linkedin-alerts
 
 A [career-ops](https://github.com/santifer/career-ops) community plugin that reads job alert emails from your Gmail (LinkedIn job alerts by default), extracts job posting URLs, and surfaces them in the career-ops pipeline.
 
@@ -14,7 +14,7 @@ A [career-ops](https://github.com/santifer/career-ops) community plugin that rea
 ## Install
 
 ```bash
-node plugins.mjs install https://github.com/Schlaflied/career-ops-plugin-gmail
+node plugins.mjs install https://github.com/Schlaflied/career-ops-plugin-linkedin-alerts
 ```
 
 ## Setup
@@ -45,19 +45,29 @@ GMAIL_REFRESH_TOKEN=your-refresh-token
 ### 4. Enable
 
 ```bash
-node plugins.mjs enable gmail --confirm
+node plugins.mjs enable linkedin-alerts --confirm
 ```
 
 ## Optional config (`config/plugins.yml`)
 
 ```yaml
-gmail:
+linkedin-alerts:
   sender: jobalerts-noreply@linkedin.com  # alert sender to scan
   days: 7                                 # look-back window in days (default: 7)
   maxResults: 50                          # max emails per scan (default: 50)
   titleKeywords: []                       # keep only titles containing any of these (empty = keep all)
   excludeKeywords: ["junior", "intern"]   # drop titles containing any of these
 ```
+
+## How is this different from the bundled `gmail` plugin?
+
+The bundled `plugins/gmail` seed is a generic label-based ingester: you set up a Gmail filter that labels job lead emails, and it extracts any clean URL from them. This plugin is specialized for **LinkedIn job alert emails** and needs no label setup:
+
+- Queries by sender (`jobalerts-noreply@linkedin.com`) instead of a user-maintained label
+- Normalizes LinkedIn tracking links (`/comm/jobs/view/…`, `?currentJobId=…`) to canonical `linkedin.com/jobs/view/{id}` and dedups across forms — the generic URL extractor passes these through as noisy tracking URLs
+- Parses LinkedIn's alert subject formats ("Acme is hiring a Designer", "3 new X jobs for you") for title and company
+
+They complement each other and can share the same `GMAIL_*` OAuth credentials (both read-only scope).
 
 ## Privacy
 

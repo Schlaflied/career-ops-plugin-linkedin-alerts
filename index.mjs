@@ -1,6 +1,6 @@
-// career-ops-plugin-gmail
+// career-ops-plugin-linkedin-alerts
 // Author: Schlaflied · https://github.com/Schlaflied
-// License: MIT · https://github.com/Schlaflied/career-ops-plugin-gmail
+// License: MIT · https://github.com/Schlaflied/career-ops-plugin-linkedin-alerts
 //
 // Reads job alert emails from Gmail (LinkedIn alerts by default), extracts
 // job posting URLs and titles, and returns them as Job[] for the
